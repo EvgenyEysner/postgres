@@ -1,0 +1,22 @@
+version: '3.5'
+
+
+services:
+  postgres:
+    container_name: postgres-demo
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: top-secret
+      POSTGRES_DB: demo
+      PGDATA: /data/postgres
+    volumes:
+       - postgres-db:/data/postgres
+       # - ./postgresql.conf:/postgresql.conf
+    ports:
+      - "5432:5432"
+
+
+volumes:
+  postgres-db:
+    driver: local
