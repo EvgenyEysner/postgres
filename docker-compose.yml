@@ -5,8 +5,9 @@ services:
   postgres:
     container_name: postgres-demo
     image: postgres:latest
+    restart: always
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_USER: root
       POSTGRES_PASSWORD: top-secret
       POSTGRES_DB: demo
       PGDATA: /data/postgres
